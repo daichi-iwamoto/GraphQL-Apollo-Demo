@@ -6,14 +6,27 @@ const typeDefs = `
     getMembers: [Member!]!
   }
 
-  type Mutation {
-    addMember(name: String! age: Int!): Member!
+  enum Role {
+    president
+    manager
+    employee
   }
 
   type Member {
     id: ID!
     name: String!
     age: Int!
+    role: Role!
+  }
+
+  input addMemberInput {
+    name: String!
+    age: Int!
+    role: Role=employee
+  }
+
+  type Mutation {
+    addMember(input: addMemberInput): Member!
   }
 `
 
@@ -31,7 +44,7 @@ const resolvers = {
 
       let newMember = {
         id: _id++,
-        ...args
+        ...args.input
       }
       members.push(newMember)
 
