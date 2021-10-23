@@ -1,0 +1,25 @@
+{
+  "name": "graphql-apollo-demo",
+  "version": "1.0.0",
+  "description": "## SetUp",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server": "^3.4.0",
+    "graphql": "^15.6.1",
+    "nodemon": "^2.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon -e js, json, graphql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daichi-iwamoto/GraphQL-Apollo-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daichi-iwamoto/GraphQL-Apollo-Demo/issues"
+  },
+  "homepage": "https://github.com/daichi-iwamoto/GraphQL-Apollo-Demo#readme"
+}
