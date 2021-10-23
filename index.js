@@ -2,13 +2,25 @@ const { ApolloServer } = require('apollo-server');
 
 const typeDefs = `
   type Query {
-    totalPhotos: Int!
+    totalMembers: Int!
+  }
+
+  type Mutation {
+    addMember(name: String! age: Int!): Boolean!
   }
 `
 
+let members = []
 const resolvers = {
   Query: {
-    totalPhotos: () => 42
+    totalMembers: () => members.length
+  },
+  
+  Mutation: {
+    addMember(parent, args) {
+      members.push(args)
+      return true
+    }
   }
 }
 
